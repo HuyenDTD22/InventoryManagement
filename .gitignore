@@ -1,0 +1,63 @@
+# Java build files
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Logs and crash reports
+*.log
+hs_err_pid*
+replay_pid*
+
+# Maven
+target/
+build/
+.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+buildNumber.properties
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse / Spring Tool Suite (STS)
+.classpath
+.project
+.settings/
+.apt_generated/
+.factorypath
+.springBeans
+.sts4-cache/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Others
+HELP.md
+*.ctxt   # BlueJ files
+.mtj.tmp/   # Mobile tools for Java
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# CUSTOM: Ignore sensitive config files
+src/main/resources/application.properties
