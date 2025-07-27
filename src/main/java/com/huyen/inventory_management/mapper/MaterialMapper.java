@@ -4,6 +4,7 @@ import com.huyen.inventory_management.dto.MaterialResponseDto;
 import com.huyen.inventory_management.model.Material;
 
 public class MaterialMapper {
+    
     public static MaterialResponseDto toResponseDto(Material material) {
         MaterialResponseDto dto = new MaterialResponseDto();
 
