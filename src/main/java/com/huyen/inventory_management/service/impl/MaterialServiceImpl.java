@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.huyen.inventory_management.dto.MaterialDto;
 import com.huyen.inventory_management.dto.MaterialUpdateDto;
+import com.huyen.inventory_management.exception.NotFoundException;
 import com.huyen.inventory_management.model.Material;
 import com.huyen.inventory_management.repository.MaterialRepository;
 import com.huyen.inventory_management.service.MaterialService;
@@ -51,7 +52,7 @@ public class MaterialServiceImpl implements MaterialService {
     @Override
     public Material updateMaterial(UUID id, MaterialUpdateDto materialUpdateDto) {
         Material material = materialRepository.findByIdAndDeletedFalse(id)
-                .orElseThrow(() -> new IllegalArgumentException("Không tìm thấy vật liệu với ID: " + id));
+                .orElseThrow(() -> new NotFoundException("Không tìm thấy vật liệu"));
 
         if (materialUpdateDto.getName() != null) {
             material.setName(materialUpdateDto.getName());
