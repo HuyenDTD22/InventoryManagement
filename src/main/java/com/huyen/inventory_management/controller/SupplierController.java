@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huyen.inventory_management.dto.SupplierDto;
-import com.huyen.inventory_management.exception.NotFoundException;
 import com.huyen.inventory_management.model.Supplier;
 import com.huyen.inventory_management.payload.ResponseData;
 import com.huyen.inventory_management.service.SupplierService;
@@ -26,7 +25,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-@RequestMapping("/supplier")
+@RequestMapping("/suppliers")
 public class SupplierController {
 
     @Autowired  
