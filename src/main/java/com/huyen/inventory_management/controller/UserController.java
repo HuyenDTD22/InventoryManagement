@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.huyen.inventory_management.dto.UserResponseDto;
 import com.huyen.inventory_management.dto.UserUpdateDto;
+import com.huyen.inventory_management.exception.NotFoundException;
 import com.huyen.inventory_management.mapper.UserMapper;
 import com.huyen.inventory_management.model.User;
 import com.huyen.inventory_management.payload.ResponseData;
@@ -65,7 +66,7 @@ public class UserController {
 
             return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
-            throw new IllegalArgumentException("Không tìm thấy nhân viên với ID: " + id);
+            throw new NotFoundException("Không tìm thấy nhân viên với ID: " + id);
         }
     }
     

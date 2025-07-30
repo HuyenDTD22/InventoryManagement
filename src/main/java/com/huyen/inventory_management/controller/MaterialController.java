@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.huyen.inventory_management.dto.MaterialDto;
 import com.huyen.inventory_management.dto.MaterialResponseDto;
 import com.huyen.inventory_management.dto.MaterialUpdateDto;
+import com.huyen.inventory_management.exception.NotFoundException;
 import com.huyen.inventory_management.mapper.MaterialMapper;
 import com.huyen.inventory_management.model.Material;
 import com.huyen.inventory_management.payload.ResponseData;
@@ -63,7 +64,7 @@ public class MaterialController {
                     responseDto);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
-            throw new IllegalArgumentException("Không tìm thấy vật liệu với ID: " + id);
+            throw new NotFoundException("Không tìm thấy vật liệu với ID: " + id);
         }
     }
     
