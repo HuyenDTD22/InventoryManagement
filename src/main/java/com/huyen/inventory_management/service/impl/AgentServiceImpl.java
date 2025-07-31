@@ -22,7 +22,7 @@ public class AgentServiceImpl implements AgentService {
     @Override
     public Agent createAgent(AgentDto agentDto) {
         if (agentRepository.existsByNameAndDeletedFalse(agentDto.getName())) {
-            throw new IllegalArgumentException("Tên nhà cung cấp đã tồn tại!");
+            throw new IllegalArgumentException("Tên đại lý đã tồn tại!");
         }
 
         Agent agent = new Agent();
