@@ -24,7 +24,7 @@ public class Warehouse {
     private LocalDateTime createdAt;
 
     @Column(name = "deleted")
-    private Boolean daeleted;
+    private Boolean deleted;
 
     @OneToMany(mappedBy = "warehouse")
     private List<ImportOrder> importOrders;
@@ -67,12 +67,12 @@ public class Warehouse {
         this.createdAt = createdAt;
     }
 
-    public Boolean getDaeleted() {
-        return daeleted;
+    public Boolean getDeleted() {
+        return deleted;
     }
 
-    public void setDaeleted(Boolean daeleted) {
-        this.daeleted = daeleted;
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
     public List<ImportOrder> getImportOrders() {
@@ -98,6 +98,8 @@ public class Warehouse {
     public void setInventories(List<Inventory> inventories) {
         this.inventories = inventories;
     }
+
+    
 
     
 }

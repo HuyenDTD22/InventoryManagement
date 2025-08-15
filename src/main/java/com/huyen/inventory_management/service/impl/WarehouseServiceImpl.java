@@ -30,7 +30,7 @@ public class WarehouseServiceImpl implements WarehouseService {
         warehouse.setName(warehouseDto.getName());
         warehouse.setAddress(warehouseDto.getAddress());
         warehouse.setCreatedAt(LocalDateTime.now());
-        warehouse.setDaeleted(false);
+        warehouse.setDeleted(false);
 
         return warehouseRepository.save(warehouse);
     }
@@ -66,7 +66,7 @@ public class WarehouseServiceImpl implements WarehouseService {
         Warehouse warehouse = warehouseRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> new NotFoundException("Không tìm thấy kho"));
 
-        warehouse.setDaeleted(true);
+        warehouse.setDeleted(true);
 
         warehouseRepository.save(warehouse);
     }

@@ -13,10 +13,13 @@ public class ImportOrderDetail {
     private UUID id;
 
     @Column(name = "quantity")
-    private Integer quantity;
+    private Float quantity;
 
     @Column(name = "unit_price")
     private Float unitPrice;
+
+    @Column(name = "deleted")
+    private Boolean deleted;
 
     @ManyToOne
     @JoinColumn(name = "material_id")
@@ -34,11 +37,11 @@ public class ImportOrderDetail {
         this.id = id;
     }
 
-    public Integer getQuantity() {
+    public Float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Float quantity) {
         this.quantity = quantity;
     }
 
@@ -48,6 +51,14 @@ public class ImportOrderDetail {
 
     public void setUnitPrice(Float unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
     public Material getMaterial() {
@@ -66,5 +77,8 @@ public class ImportOrderDetail {
         this.importOrder = importOrder;
     }
 
+    
+
+    
     
 }
